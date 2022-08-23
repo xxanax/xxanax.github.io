@@ -1,0 +1,46 @@
+	body{
+		font-size: 2em;
+		background-color: #0f0f0f;
+		color: #ffffff;
+	}	
+	.main{
+		background-color: #f0f0f0;
+		color:#ffffff;
+		height: 1000px;
+		/*border-color: #ff0000;
+		border-radius: 20pt;*/
+	}
+	.header{
+		background-color: #0f0f0f;
+		color:#ffffff;
+		border-radius: 0pt 0pt 5pt 5pt;
+		position: fixed;
+		display:flex;
+		align-items: center;
+		align-content: center;
+		justify-content: space-between;
+	}
+
+	.header .btn{
+		background-color: #0f0f0f;
+		color:#ffffff;
+		border-color: red;
+	}
+
+	.header .mylogo{
+		color:white;
+		text-decoration-style: underline;
+		text-decoration-color: #ffffff;
+		border:1pt solid #0f0f0f;
+		border-radius:0;
+		padding:0.2em;
+	}
+	.header .mylogo:hover{
+		transition: 1s;
+		color:white;
+		/*text-decoration:underline;*/
+		text-decoration-color: red; 
+		border:1pt solid red;
+		border-radius:0;
+		padding:0.2em;
+	}
