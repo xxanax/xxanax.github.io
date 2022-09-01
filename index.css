@@ -28,8 +28,9 @@
 	}
 
 	.header .mylogo{
+		align-items: center;
+		justify-content: space-between;
 		text-align: center;
-		tex
 		color:white;
 		text-decoration-style: underline;
 		text-decoration-color: #ffffff;
