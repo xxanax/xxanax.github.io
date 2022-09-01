@@ -28,6 +28,8 @@
 	}
 
 	.header .mylogo{
+		text-align: center;
+		tex
 		color:white;
 		text-decoration-style: underline;
 		text-decoration-color: #ffffff;
@@ -36,7 +38,7 @@
 		padding:0.2em;
 	}
 	.header .mylogo:hover{
-		transition: 1s;
+		transition: 0.2s;
 		color:white;
 		/*text-decoration:underline;*/
 		text-decoration-color: red; 
