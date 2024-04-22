@@ -1,49 +1,88 @@
+	html{
+		background-color: #000;
+
+	}
 	body{
 		font-size: 2em;
-		background-color: #0f0f0f;
-		color: #ffffff;
+		background-color: #000;
+		color: #000;
 	}	
 	.main{
-		background-color: #f0f0f0;
-		color:#ffffff;
-		height: 1000px;
-		/*border-color: #ff0000;
+		background-color: #000;
+		color:#fff;
+		height: 100%;
+		/*border-bottom: 2pt solid #2E3532;
+		border-color: #ff0000;
 		border-radius: 20pt;*/
 	}
 	.header{
-		background-color: #0f0f0f;
-		color:#ffffff;
-		border-radius: 0pt 0pt 5pt 5pt;
+		margin: 0;
+		background-color: #2E3532;
+		color:#fff;
+		border-radius: 0pt 0pt 10pt 10pt;
 		position: fixed;
 		display:flex;
-		align-items: center;
+		align-items: center;		
 		align-content: center;
-		justify-content: space-between;
+		justify-content: space-evenly;
 	}
 
 	.header .btn{
-		background-color: #0f0f0f;
-		color:#ffffff;
-		border-color: red;
+		background-color: #2E3532;
+		text-decoration: none;
+		color:#fff;
+		border-radius: 0;
+		/*border-color: red;*/
 	}
 
-	.header .mylogo{
+	 .mylogo{
 		align-items: center;
 		justify-content: space-between;
 		text-align: center;
-		color:white;
-		text-decoration-style: underline;
-		text-decoration-color: #ffffff;
-		border:1pt solid #0f0f0f;
+		color:#fff;
+		text-decoration: none;
+/*		text-decoration-style: underline;*/
+		text-decoration-color: #D2D4C8;
+		border:1pt solid #D2D4C8;
 		border-radius:0;
 		padding:0.2em;
 	}
-	.header .mylogo:hover{
+	.mylogo:hover{
 		transition: 0.2s;
-		color:white;
-		/*text-decoration:underline;*/
-		text-decoration-color: red; 
-		border:1pt solid red;
+		color:#fff;
+		border:1pt solid #8B2635;
 		border-radius:0;
 		padding:0.2em;
+	}
+
+	.specs {
+		display:flex;
+		align-items: center;		
+		align-content: center;
+		justify-content: space-evenly;
+		margin-top: 7em;
+	}
+
+	.specs .btn{
+		color:#fff;
+		justify-content: space-between;
+	}
+
+	.possible{
+		background-color: #000;
+		color:#fff;
+		height: 100%;
+	}
+	.cases_links {
+		margin-top: 1em;
+		margin-bottom: 2em;
+	}
+
+	.cases_links .btn{
+		padding-top: 1em;
+		padding-bottom: 1em;
+		display: block;
+		color:#fff;
+		justify-content: center;
+		margin-bottom: 1em;
 	}
