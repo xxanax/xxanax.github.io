@@ -3,10 +3,14 @@
 
 	}
 	body{
-		/*font-size: 2em;*/
+		/*font-size: 2em;*/	
 		font-family: var(--bs-font-monospace);
 		background-color: var(--tg-theme-bg-color);
 	}	
+
+	h1{
+		font-family: var(--bs-font-sans-serif);
+	}
 
 	.main{
 		background-color: var(--tg-theme-bg-color);
