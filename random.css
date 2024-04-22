@@ -10,6 +10,7 @@ body{
 }	
 
 .random_form {
+	background-color: var(--tg-theme-bg-color);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -18,6 +19,7 @@ body{
 .random_form input{
 	background-color: var(--tg-theme-bg-color);
 	color: var(--tg-theme-text-color);
+	border-color: var(--tg-theme-text-color);
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
