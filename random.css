@@ -8,7 +8,7 @@
 		height: 100%;
 	}	
 
-/*	.random_form {
+	.random_form {
 		background-color: var(--tg-theme-bg-color);
 		color: var(--tg-theme-text-color);
 		display: flex;
@@ -35,5 +35,5 @@
 		color: var(--tg-theme-button-text-color);
 		margin-top: 1em;
 		margin-bottom: 1em;
-	}*/
+	}
 
