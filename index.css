@@ -72,7 +72,7 @@
 	}
 
 	.possible{
-		background-color: var(--tg-theme-button-color);
+		background-color: var(--tg-theme-color);
 		color: var(--tg-theme-text-color);
 		height: 100%;
 	}
@@ -82,7 +82,7 @@
 	}
 
 	.cases_links .btn{
-		color:--tg-theme-button-text-color;
+		color: var(--tg-theme-button-text-color);
 		padding-top: 1em;
 		padding-bottom: 1em;
 		display: block;
