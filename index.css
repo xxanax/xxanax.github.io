@@ -3,7 +3,7 @@
 
 	}
 	body{
-		font-size: 2em;
+		/*font-size: 2em;*/
 		background-color: var(--tg-theme-bg-color);
 	}	
 	.specs .btn:hover{
@@ -63,7 +63,6 @@
 		align-items: center;		
 		align-content: center;
 		justify-content: space-evenly;
-		margin-top: 7em;
 	}
 
 	.specs .btn{
@@ -91,6 +90,6 @@
 	}
 
 	.cases_links .btn:hover{
-		color: var(--tg-theme-button-text-color);
-	
+		color:  var(--tg-theme-text-color);
+		border-color:  var(--tg-theme-text-color);
 	}
