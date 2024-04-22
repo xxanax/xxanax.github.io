@@ -21,12 +21,15 @@
 		align-items: center;		
 		align-content: center;
 		justify-content: space-evenly;
+		color: var(--tg-theme-text-color);
+		border-color:  var(--tg-theme-text-color);
+		
 	}
 
 	.specs .btn{
 		color: var(--tg-theme-text-color);
-		justify-content: space-between;
 		border-color:  var(--tg-theme-text-color);
+		justify-content: space-between;
 	}
 
 	.possible{
