@@ -81,7 +81,6 @@
 	}
 
 	.cases_links .btn{
-		color: var(--tg-theme-button-text-color);
 		padding-top: 1em;
 		padding-bottom: 1em;
 		display: block;
@@ -89,5 +88,5 @@
 		margin-bottom: 1em;
 		color:  var(--tg-theme-text-color);
 		border-color:  var(--tg-theme-text-color);
-		
+
 	}
