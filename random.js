@@ -13,7 +13,7 @@ btn.addEventListener('click', function(){ //вешаем событие на н�
 		random = 0; 
 	};
 
-	let result_div = document.getElementById("random_number")
+	let result_div = document.getElementById("random_number");
 
 	result_div.innerText = random;
 
