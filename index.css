@@ -17,17 +17,23 @@
 	}
 
 	.specs {
-		display:flex;
+		display:inline-grid;
 		align-items: center;		
 		align-content: center;
 		justify-content: space-evenly;
 	}
 
+	.specs_grid{
+		display: flex;
+		justify-content: space-evenly;
+	}
+
 	.specs .btn{
+		margin: 1em;
 		color: var(--tg-theme-text-color);
 		border-color:  var(--tg-theme-text-color);
-		justify-content: space-between;
-	}
+		text-align: center;
+		}
 
 	.possible{
 		background-color: var(--tg-theme-color);
