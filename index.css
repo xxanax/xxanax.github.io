@@ -87,9 +87,7 @@
 		display: block;
 		justify-content: center;
 		margin-bottom: 1em;
-	}
-
-	.cases_links .btn:hover{
 		color:  var(--tg-theme-text-color);
 		border-color:  var(--tg-theme-text-color);
+		
 	}
