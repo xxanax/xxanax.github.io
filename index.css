@@ -29,7 +29,7 @@
 	}
 
 	.specs .btn{
-		margin: 1em;
+		margin: 0.5em;
 		color: var(--tg-theme-text-color);
 		border-color:  var(--tg-theme-text-color);
 		text-align: center;
