@@ -17,7 +17,7 @@
 }
 
 .random_form > input{
-	background-color: var(--tg-theme-secondary-bg-color);
+	background-color: var(--tg-theme-bg-color);
 	color: var(--tg-theme-text-color);
 	margin-top: 1em;
 	margin-bottom: 1em;
