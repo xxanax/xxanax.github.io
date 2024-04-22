@@ -1,15 +1,20 @@
+	--
+
 	html{
-		background-color: #000;
+		background-color: --tg-theme-bg-color;
 
 	}
 	body{
 		font-size: 2em;
-		background-color: #000;
-		color: #000;
+		background-color: --tg-theme-bg-color;
 	}	
+	.specs .btn:hover{
+		color: --tg-theme-text-color;
+		border-color: --tg-theme-text-color;
+	}
 	.main{
-		background-color: #000;
-		color:#fff;
+		background-color: --tg-theme-bg-color;
+		color:--tg-theme-text-color;
 		height: 100%;
 		/*border-bottom: 2pt solid #2E3532;
 		border-color: #ff0000;
@@ -18,7 +23,7 @@
 	.header{
 		margin: 0;
 		background-color: #2E3532;
-		color:#fff;
+		color:--tg-theme-text-color;
 		border-radius: 0pt 0pt 10pt 10pt;
 		position: fixed;
 		display:flex;
@@ -30,7 +35,7 @@
 	.header .btn{
 		background-color: #2E3532;
 		text-decoration: none;
-		color:#fff;
+		color:--tg-theme-text-color;
 		border-radius: 0;
 		/*border-color: red;*/
 	}
@@ -39,7 +44,7 @@
 		align-items: center;
 		justify-content: space-between;
 		text-align: center;
-		color:#fff;
+		color:--tg-theme-text-color;
 		text-decoration: none;
 /*		text-decoration-style: underline;*/
 		text-decoration-color: #D2D4C8;
@@ -49,7 +54,7 @@
 	}
 	.mylogo:hover{
 		transition: 0.2s;
-		color:#fff;
+		color:--tg-theme-text-color;
 		border:1pt solid #8B2635;
 		border-radius:0;
 		padding:0.2em;
@@ -64,13 +69,13 @@
 	}
 
 	.specs .btn{
-		color:#fff;
+		color:--tg-theme-text-color;
 		justify-content: space-between;
 	}
 
 	.possible{
-		background-color: #000;
-		color:#fff;
+		background-color: --tg-theme-button-color;
+		color:--tg-theme-text-color;
 		height: 100%;
 	}
 	.cases_links {
@@ -79,10 +84,15 @@
 	}
 
 	.cases_links .btn{
+		color:--tg-theme-button-text-color;
 		padding-top: 1em;
 		padding-bottom: 1em;
 		display: block;
-		color:#fff;
 		justify-content: center;
 		margin-bottom: 1em;
+	}
+
+	.cases_links .btn:hover{
+		color:--tg-theme-button-text-color;
+	
 	}
