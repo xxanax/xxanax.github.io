@@ -1,39 +1,39 @@
-html{
-	background-color: var(--tg-theme-bg-color);
-}
-body{
-	font-family: var(--bs-font-sans-serif);
-	background-color: var(--tg-theme-bg-color);
-	color: var(--tg-theme-text-color);
-	height: 100%;
-}	
+	html{
+		background-color: var(--tg-theme-bg-color);
+	}
+	body{
+		font-family: var(--bs-font-sans-serif);
+		background-color: var(--tg-theme-bg-color);
+		color: var(--tg-theme-text-color);
+		height: 100%;
+	}	
 
-.random_form {
-	background-color: var(--tg-theme-bg-color);
-	color: var(--tg-theme-text-color);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
+	.random_form {
+		background-color: var(--tg-theme-bg-color);
+		color: var(--tg-theme-text-color);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
-.random_form input{
-	background-color: var(--tg-theme-bg-color);
-	color: var(--tg-theme-text-color);
-	border-color: var(--tg-theme-text-color);
-	margin-top: 1em;
-	margin-bottom: 1em;
-}
+	.random_form input{
+		background-color: var(--tg-theme-bg-color);
+		color: var(--tg-theme-text-color);
+		border-color: var(--tg-theme-text-color);
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
 
-input:focus{
-	outline: 0;
-	background-color: var(--tg-theme-bg-color);
-	color: var(--tg-theme-text-color);
-}
+	input:focus{
+		outline: 0;
+		background-color: var(--tg-theme-bg-color);
+		color: var(--tg-theme-text-color);
+	}
 
-.random_form > button{
-	background-color: var(--tg-theme-button-color);
-	color: var(--tg-theme-button-text-color);
-	margin-top: 1em;
-	margin-bottom: 1em;
-}
+	.random_form > button{
+		background-color: var(--tg-theme-button-color);
+		color: var(--tg-theme-button-text-color);
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
 
