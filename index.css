@@ -21,9 +21,6 @@
 		align-items: center;		
 		align-content: center;
 		justify-content: space-evenly;
-		color: var(--tg-theme-text-color);
-		border-color:  var(--tg-theme-text-color);
-		
 	}
 
 	.specs .btn{
@@ -50,5 +47,4 @@
 		margin-bottom: 1em;
 		color:  var(--tg-theme-text-color);
 		border-color:  var(--tg-theme-text-color);
-
 	}
