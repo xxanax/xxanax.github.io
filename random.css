@@ -10,7 +10,6 @@ body{
 }	
 
 .random_form {
-	background-color: var(--tg-theme-bg-color);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
