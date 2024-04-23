@@ -17,7 +17,8 @@
 		align-items: center;
 	}
 
-	.ask_form input{
+	.ask_form textarea{
+		resize: none;
 		background-color: var(--tg-theme-bg-color);
 		color: var(--tg-theme-text-color);
 		border-style: solid;
@@ -26,7 +27,7 @@
 		margin-bottom: 1em;
 	}
 
-	input:focus{
+	textarea:focus{
 		outline: 0;
 		background-color: var(--tg-theme-bg-color);
 		color: var(--tg-theme-text-color);
