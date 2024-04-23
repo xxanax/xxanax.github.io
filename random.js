@@ -1,9 +1,9 @@
-let tg = window.Telegram.WebApp;
+let tg = window.Telegram.WebApp; 
 tg.expand();
 
 let btn = document.getElementById("generate");
 
-btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+btn.addEventListener('click', function(){ 
 	let min = parseInt(document.getElementById("min").value);
 	let max = parseInt(document.getElementById("max").value);
 	let random = 0;
