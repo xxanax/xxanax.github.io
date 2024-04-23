@@ -32,6 +32,7 @@
 	}
 
 	#generate{
+		border: 2px solid var(--tg-theme-button-text-color);
 		border-radius: 0;
 		background-color: var(--tg-theme-button-color);
 		color: var(--tg-theme-button-text-color);
@@ -39,15 +40,13 @@
 		margin-bottom: 1em;
 	}
 	#generate:focus{
-		border-radius: 0;
 		outline: 0;
-		background-color: var(--tg-theme-bg-color);
-		color: var(--tg-theme-text-color);
+		background-color: var(--tg-theme-button-color);
+		color: var(--tg-theme-button-text-color);
 	}
 
 	#generate:hover{
-		border-radius: 0;
 		outline: 0;
-		background-color: var(--tg-theme-bg-color);
-		color: var(--tg-theme-text-color);
+		background-color: var(--tg-theme-button-color);
+		color: var(--tg-theme-button-text-color);
 	}
