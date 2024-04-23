@@ -3,5 +3,5 @@ tg.expand();
 tg.BackButton.isVisible = true;
 
 Telegram.WebApp.onEvent('backButtonClicked', function(){
-	window.history.go(-1);
+	window.history.back();
 });
