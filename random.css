@@ -32,6 +32,12 @@
 		color: var(--tg-theme-text-color);
 	}
 
+	::placeholder {
+	  color: var(--tg-theme-hint-color);
+	  opacity: 0.8; /* Firefox */
+	}
+
+
 	#generate{
 		border: 0;
 		border-radius: 2;
