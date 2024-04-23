@@ -32,8 +32,8 @@
 	}
 
 	#generate{
-		border: 2px solid var(--tg-theme-button-text-color);
-		border-radius: 0;
+		border: 0;
+		border-radius: 2;
 		background-color: var(--tg-theme-button-color);
 		color: var(--tg-theme-button-text-color);
 		margin-top: 1em;
