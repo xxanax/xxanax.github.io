@@ -1,7 +1,9 @@
-let tg = window.Telegram.WebApp;
+const tg = window.Telegram.WebApp;
 tg.expand();
-tg.BackButton.isVisible = true;
+tg.BackButton.show();
 
-tg.onEvent('backButtonClicked', function(){
+const goBack = () => {
 	window.history.back();
-});
+};
+
+tg.BackButton.onClick(goBack);
