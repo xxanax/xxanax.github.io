@@ -51,7 +51,7 @@ bot = TeleBot(token, parse_mode = 'HTML', use_class_middlewares=True)
 def start(message):
 ## Start command
 	bot.send_chat_action(message.from_user.id, action = 'typing', timeout = 100)
-	bot.send_message(message.chat.id, 'Проект на GitHub: <a href="https://github.com/xxanax/xxanax.github.io">ссылка</a>\n\nИспользуйте команды меню, чтобы узнать больше👇', reply_markup = types.ReplyKeyboardRemove())
+	bot.send_message(message.chat.id, 'Используйте команды меню, чтобы узнать больше👇', reply_markup = types.ReplyKeyboardRemove())
 
 @bot.message_handler(commands = ['portfolio'])
 def portfolio(message):
