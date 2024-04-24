@@ -120,4 +120,4 @@ if __name__ == '__main__':
 		])
 
 	## Run polling
-	bot.infinity_polling()
+	bot.infinity_polling(,restart_on_change=True)
