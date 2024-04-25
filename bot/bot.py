@@ -59,8 +59,8 @@ def start(message):
 def clicker(message):
 ## Clicker command, send keyboard with link to clicker telegram bot
 	bot.send_chat_action(message.from_user.id, action = 'typing', timeout = 100)
-	mark = types.InlineReplyKeyboardMarkup()
-	mark.add(types.InlineKeyboardButton(text = "🎲 Генератор случайных чисел 🎲", url = ""))
+	mark = types.InlineKeyboardMarkup()
+	mark.add(types.InlineKeyboardButton(text = "♦️ Протестировать кликер ♦️", url = "https://t.me/redrockrobot"))
 
 	bot.send_message(message.chat.id, 'Генератор случайных чисел по кнопке ниже:', reply_markup = mark)
 
@@ -128,7 +128,7 @@ if __name__ == '__main__':
 		[
 			types.BotCommand("/portfolio", "Резюме в виде WebApp 📋"),
 			types.BotCommand("/random", "Генератор случайных чисел 🔢"),
-			types.BotCommand("/gpt", "Задать вопрос ChatGPT 💭")
+			types.BotCommand("/gpt", "Задать вопрос ChatGPT 💭"),
 			types.BotCommand("/clicker", "Пет-проект WebAppClicker 🛠")
 		])
 
