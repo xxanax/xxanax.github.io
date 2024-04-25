@@ -53,6 +53,18 @@ def start(message):
 	bot.send_chat_action(message.from_user.id, action = 'typing', timeout = 100)
 	bot.send_message(message.chat.id, 'Проект на GitHub: <a href="https://github.com/xxanax/xxanax.github.io">ссылка</a>\n\nИспользуйте команды меню, чтобы узнать больше👇', reply_markup = types.ReplyKeyboardRemove())
 
+
+
+@bot.message_handler(commands = ['clicker'])
+def clicker(message):
+## Clicker command, send keyboard with link to clicker telegram bot
+	bot.send_chat_action(message.from_user.id, action = 'typing', timeout = 100)
+	mark = types.InlineReplyKeyboardMarkup()
+	mark.add(types.InlineKeyboardButton(text = "🎲 Генератор случайных чисел 🎲", url = ""))
+
+	bot.send_message(message.chat.id, 'Генератор случайных чисел по кнопке ниже:', reply_markup = mark)
+
+
 @bot.message_handler(commands = ['portfolio'])
 def portfolio(message):
 ## Portfolio command, send portfolio page webApp
@@ -117,6 +129,7 @@ if __name__ == '__main__':
 			types.BotCommand("/portfolio", "Резюме в виде WebApp 📋"),
 			types.BotCommand("/random", "Генератор случайных чисел 🔢"),
 			types.BotCommand("/gpt", "Задать вопрос ChatGPT 💭")
+			types.BotCommand("/clicker", "Пет-проект WebAppClicker 🛠")
 		])
 
 	## Run polling
