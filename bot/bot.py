@@ -62,7 +62,7 @@ def clicker(message):
 	mark = types.InlineKeyboardMarkup()
 	mark.add(types.InlineKeyboardButton(text = "♦️ Протестировать кликер ♦️", url = "https://t.me/redrockrobot"))
 
-	bot.send_message(message.chat.id, 'Генератор случайных чисел по кнопке ниже:', reply_markup = mark)
+	bot.send_message(message.chat.id, 'Пет-проект написан на Flask:', reply_markup = mark)
 
 
 @bot.message_handler(commands = ['portfolio'])
