@@ -16,6 +16,7 @@ token = config['Telegram']['token']
 portfolio_url = config['Urls']['portfolio_url']
 random_url = config['Urls']['random_url']
 gpt_url = config['Urls']['gpt_url']
+passwords_url = config['Urls']['passwords_url']
 
 def time_left_tomorrow():
 ## Get time left for tomorrow
@@ -54,6 +55,16 @@ def start(message):
 	bot.send_message(message.chat.id, 'Проект на GitHub: <a href="https://github.com/xxanax/xxanax.github.io">ссылка</a>\n\nИспользуйте команды меню, чтобы узнать больше👇', reply_markup = types.ReplyKeyboardRemove())
 
 
+@bot.message_handler(commands = ['passwords'])
+def passwords(message):
+## Portfolio command, send portfolio page webApp
+	bot.send_chat_action(message.from_user.id, action = 'typing', timeout = 100)
+	mark = types.ReplyKeyboardMarkup(resize_keyboard = True)
+	webAppTest = types.WebAppInfo(passwords_url)
+	mark.add(types.KeyboardButton(text = "🔑 Генератор паролей 🔑", web_app = webAppTest))
+
+	bot.send_message(message.chat.id, 'Попробуйте генератор паролей по кнопке ниже:', reply_markup = mark)
+
 
 @bot.message_handler(commands = ['clicker'])
 def clicker(message):
@@ -71,7 +82,7 @@ def portfolio(message):
 	bot.send_chat_action(message.from_user.id, action = 'typing', timeout = 100)
 	mark = types.ReplyKeyboardMarkup(resize_keyboard = True)
 	webAppTest = types.WebAppInfo(portfolio_url)
-	mark.add(types.KeyboardButton(text = "🛠 СМОТРЕТЬ ПОРТФОЛИО 🛠", web_app = webAppTest))
+	mark.add(types.KeyboardButton(text = "🛠 ПОРТФОЛИО 🛠", web_app = webAppTest))
 
 	bot.send_message(message.chat.id, 'Смотрите портфолио по кнопке ниже:', reply_markup = mark)
 
@@ -129,6 +140,7 @@ if __name__ == '__main__':
 			types.BotCommand("/portfolio", "Резюме в виде WebApp 📋"),
 			types.BotCommand("/random", "Генератор случайных чисел 🔢"),
 			types.BotCommand("/gpt", "Задать вопрос ChatGPT 💭"),
+			types.BotCommand("/passwords", "Генератор сложных паролей"),
 			types.BotCommand("/clicker", "Пет-проект WebAppClicker 🛠")
 		])
 
