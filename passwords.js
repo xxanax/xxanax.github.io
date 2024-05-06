@@ -39,7 +39,15 @@ function generatePassword(){
 		res += charset.charAt(Math.floor(Math.random() * n));
 	}
 	document.getElementById("password").innerHTML = res;
+	document.getElementById("copy").innerHTML = 'Copy to clipboard'
 
 }
 
+function copyPassword(){
+	var copyText = document.getElementById("password");
+	navigator.clipboard.writeText(copyText.innerHTML);
+	document.getElementById("copy").innerHTML = 'Password copied!'
+};
+
 document.getElementById("generate").onclick = generatePassword;
+document.getElementById("copy").onclick = copyPassword;
