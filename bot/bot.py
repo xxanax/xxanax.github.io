@@ -5,7 +5,7 @@ import datetime
 import json
 import configparser
 
-import gpt
+#import gpt
 import db
 
 ## Get data from config
@@ -139,7 +139,7 @@ if __name__ == '__main__':
 		[
 			types.BotCommand("/portfolio", "Резюме в виде WebApp 📋"),
 			types.BotCommand("/random", "Генератор случайных чисел 🔢"),
-			types.BotCommand("/gpt", "Задать вопрос ChatGPT 💭"),
+			#types.BotCommand("/gpt", "Задать вопрос ChatGPT 💭"),
 			types.BotCommand("/passwords", "Генератор сложных паролей"),
 			types.BotCommand("/clicker", "Пет-проект WebAppClicker 🛠")
 		])
