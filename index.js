@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         switch(command) {
             case "cat resume.txt":
                 response = `
-<span class="section-title">Резюме Кирилла</span>
+<span class="section-title">Резюме</span>
 
 <span class="highlight">Имя:</span> Кирилл
 <span class="highlight">Возраст:</span> 22
@@ -58,13 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <span class="section-title">Карьерный путь:</span>
 - Начинал с фриланс-разработки
-- Работал как индивидуальный предприниматель
+- Работал с индивидуальными предпринимателями 
 - Специализировался на создании Telegram ботов под ключ
 
 <span class="section-title">Навыки:</span>
 - Python (Flask, Django)
-- Telegram Bot API
-- PostgreSQL
+- Telegram Bot API, Telegram Web Apps
+- PostgreSQL, SQLite3
 - Nginx, Gunicorn, Supervisor
 - Администрирование Linux серверов
 `;
