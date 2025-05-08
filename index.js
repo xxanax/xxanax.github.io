@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     typingText.textContent = '';
                     isTyping = true;
                     startTyping();
-                }, 1500);
+                }, 2000);
             }
         } else {
             // Все команды выполнены, показываем статичный курсор
