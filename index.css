@@ -2,7 +2,7 @@ body {
     background-color: #121212;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh;
     margin: 0;
     padding: 20px;
@@ -61,7 +61,7 @@ body {
 .terminal-body {
     background-color: #1e1e1e;
     padding: 20px;
-    height: 500px;
+    height: 80vh;
     overflow-y: auto;
 }
 
