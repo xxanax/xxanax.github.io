@@ -1,12 +1,13 @@
 :root {
-    --bg-color: #1e1e1e;
+    --bg-color: #121212;
     --text-color: #e0e0e0;
     --accent-color: #4CAF50;
     --secondary-color: #BB86FC;
     --error-color: #FF5252;
     --prompt-color: #4CAF50;
     --cursor-color: #4CAF50;
-    --header-color: #2d2d2d;
+    --header-color: #252525;
+    --section-bg: rgba(255, 255, 255, 0.03);
 }
 
 * {
@@ -19,11 +20,11 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: 'Source Code Pro', monospace;
-    line-height: 1.6;
+    line-height: 1.8;
     padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     min-height: 100vh;
 }
 
@@ -34,13 +35,15 @@ body {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .terminal-header {
     background-color: var(--header-color);
-    padding: 8px 15px;
+    padding: 10px 15px;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .terminal-buttons {
@@ -52,6 +55,7 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
+    opacity: 0.7;
 }
 
 .terminal-button.red {
@@ -70,18 +74,20 @@ body {
     margin-left: 15px;
     font-size: 0.8rem;
     color: #888;
+    letter-spacing: 0.5px;
 }
 
 .terminal-body {
-    padding: 20px;
-    height: 100vh;
+    padding: 25px;
+    height: 600px;
     overflow-y: auto;
 }
 
 .command-line {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
 }
 
 .prompt {
@@ -92,11 +98,13 @@ body {
 
 .command {
     color: var(--text-color);
+    letter-spacing: 0.3px;
 }
 
 .cursor {
     color: var(--cursor-color);
     animation: blink 1s infinite;
+    margin-left: 2px;
 }
 
 @keyframes blink {
@@ -105,57 +113,85 @@ body {
 }
 
 .output {
-    margin-top: 20px;
+    margin: 20px 0 30px;
     white-space: pre-wrap;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.section-title {
+    color: var(--secondary-color);
+    margin: 30px 0 15px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+.highlight {
+    color: var(--accent-color);
+    font-weight: 500;
 }
 
 .project {
-    margin: 20px 0;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 5px;
+    margin: 25px 0;
+    padding: 20px;
+    background-color: var(--section-bg);
+    border-radius: 6px;
     border-left: 3px solid var(--accent-color);
 }
 
 .project-title {
     color: var(--secondary-color);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-weight: 600;
+    font-size: 1.1rem;
 }
 
 .project-stack {
     font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 10px;
+    color: #aaa;
+    margin-bottom: 15px;
+    font-style: italic;
 }
 
 .project-link {
     color: var(--accent-color);
     text-decoration: none;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
 }
 
 .project-link:hover {
+    opacity: 0.8;
     text-decoration: underline;
 }
 
-.section-title {
-    color: var(--secondary-color);
-    margin: 25px 0 10px;
-    font-size: 1.2rem;
+ul, ol {
+    padding-left: 20px;
+    margin: 15px 0;
 }
 
-.highlight {
+li {
+    margin-bottom: 8px;
+    position: relative;
+    list-style-type: none;
+}
+
+li:before {
+    content: "→";
     color: var(--accent-color);
-}
-
-.error {
-    color: var(--error-color);
+    position: absolute;
+    left: -20px;
 }
 
 .success {
     color: var(--accent-color);
+    display: block;
+    margin-top: 20px;
+    font-weight: 500;
 }
 
 ::-webkit-scrollbar {
@@ -178,5 +214,9 @@ body {
     
     .terminal-body {
         padding: 15px;
+    }
+    
+    .section-title {
+        font-size: 1.1rem;
     }
 }
