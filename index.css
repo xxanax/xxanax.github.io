@@ -20,17 +20,15 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: 'Source Code Pro', monospace;
-    line-height: 1.8;
+    line-height: 1.6;
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
 }
 
 .terminal {
     width: 100%;
     max-width: 800px;
+    margin: 0 auto;
     background-color: var(--bg-color);
     border-radius: 8px;
     overflow: hidden;
@@ -79,14 +77,15 @@ body {
 
 .terminal-body {
     padding: 25px;
-    height: 600px;
     overflow-y: auto;
+    height: auto;
+    min-height: 300px;
 }
 
 .command-line {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     font-size: 1rem;
 }
 
@@ -94,11 +93,14 @@ body {
     color: var(--prompt-color);
     margin-right: 10px;
     font-weight: bold;
+    flex-shrink: 0;
 }
 
 .command {
     color: var(--text-color);
     letter-spacing: 0.3px;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 .cursor {
@@ -113,16 +115,18 @@ body {
 }
 
 .output {
-    margin: 20px 0 30px;
+    margin: 15px 0 25px;
     white-space: pre-wrap;
-    line-height: 1.8;
+    line-height: 1.7;
     font-size: 0.95rem;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .section-title {
     color: var(--secondary-color);
-    margin: 30px 0 15px;
-    font-size: 1.3rem;
+    margin: 25px 0 10px;
+    font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.5px;
     display: block;
@@ -134,8 +138,8 @@ body {
 }
 
 .project {
-    margin: 25px 0;
-    padding: 20px;
+    margin: 20px 0;
+    padding: 15px;
     background-color: var(--section-bg);
     border-radius: 6px;
     border-left: 3px solid var(--accent-color);
@@ -143,15 +147,15 @@ body {
 
 .project-title {
     color: var(--secondary-color);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 
 .project-stack {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #aaa;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     font-style: italic;
 }
 
@@ -159,7 +163,7 @@ body {
     color: var(--accent-color);
     text-decoration: none;
     display: inline-block;
-    margin-top: 12px;
+    margin-top: 10px;
     font-size: 0.9rem;
     transition: opacity 0.2s;
 }
@@ -171,11 +175,11 @@ body {
 
 ul, ol {
     padding-left: 20px;
-    margin: 15px 0;
+    margin: 12px 0;
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     position: relative;
     list-style-type: none;
 }
@@ -190,12 +194,12 @@ li:before {
 .success {
     color: var(--accent-color);
     display: block;
-    margin-top: 20px;
+    margin-top: 15px;
     font-weight: 500;
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -204,7 +208,7 @@ li:before {
 
 ::-webkit-scrollbar-thumb {
     background: var(--accent-color);
-    border-radius: 4px;
+    border-radius: 3px;
 }
 
 @media (max-width: 600px) {
@@ -218,5 +222,10 @@ li:before {
     
     .section-title {
         font-size: 1.1rem;
+    }
+    
+    .output {
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 }
