@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const terminal = document.getElementById('terminal');
-    let typedText = document.querySelector('.typed-text');
-    let cursor = document.querySelector('.cursor');
+    let currentTypedText = document.querySelector('.typed-text');
+    let currentCursor = document.querySelector('.cursor');
     
     const commands = [
         { text: 'print("Привет, я Кирилл!")', delay: 100, class: 'command' },
@@ -23,15 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
         { text: 'Связь со мной:', delay: 50, class: 'success' },
         { text: 'Telegram: @hqwskq', delay: 50, class: 'info' },
         { text: 'Email: kolosoek86@gmail.com', delay: 50, class: 'info' },
-        { text: 'GitHub: https://github.com/xxanax', delay: 50, class: 'info'},
+        { text: 'GitHub: https://github.com/xxanax', delay: 50, class: 'info' },
         { text: ' ', delay: 50 },
-        { text: 'Резюме готово к просмотру!', delay: 50, class: 'success' },
-        { text: 'Введите "help" для списка команд...', delay: 50, class: 'comment' }
+        { text: 'Спасибо за просмотр моего резюме!', delay: 50, class: 'success' }
     ];
 
     let currentCommand = 0;
     let currentChar = 0;
-    let isTyping = true;
 
     function typeWriter() {
         if (currentCommand < commands.length) {
@@ -46,15 +44,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 
                 span.textContent = char;
-                typedText.appendChild(span);
+                currentTypedText.appendChild(span);
                 
-                // Прокрутка терминала вниз
                 terminal.scrollTop = terminal.scrollHeight;
-                
                 currentChar++;
                 setTimeout(typeWriter, command.delay);
             } else {
-                // Переход к следующей команде
+                // Убираем курсор с завершенной строки
+                if (currentCursor) {
+                    currentCursor.style.display = 'none';
+                }
+                
                 currentCommand++;
                 currentChar = 0;
                 
@@ -62,114 +62,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     command.action();
                 }
                 
-                // Добавляем новую строку
+                // Создаем новую строку
                 if (currentCommand < commands.length) {
                     const newLine = document.createElement('div');
                     newLine.className = 'terminal-line';
                     newLine.innerHTML = '$ <span class="typed-text"></span><span class="cursor">|</span>';
                     terminal.appendChild(newLine);
-                    typedText = newLine.querySelector('.typed-text');
-                    cursor = newLine.querySelector('.cursor');
+                    
+                    // Обновляем ссылки на текущие элементы
+                    currentTypedText = newLine.querySelector('.typed-text');
+                    currentCursor = newLine.querySelector('.cursor');
                 }
                 
                 setTimeout(typeWriter, 100);
             }
         } else {
-            isTyping = false;
-            // После завершения анимации добавляем обработчик ввода
-            setupInput();
-        }
-    }
-
-    function setupInput() {
-        const inputLine = document.createElement('div');
-        inputLine.className = 'terminal-line';
-        inputLine.innerHTML = '$ <input type="text" class="terminal-input" autofocus><span class="cursor">|</span>';
-        terminal.appendChild(inputLine);
-        
-        const input = document.querySelector('.terminal-input');
-        input.focus();
-        
-        input.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                const command = input.value.trim();
-                input.remove();
-                
-                // Выводим введенную команду
-                const commandLine = document.createElement('div');
-                commandLine.className = 'terminal-line';
-                commandLine.textContent = '$ ' + command;
-                terminal.appendChild(commandLine);
-                
-                // Обработка команд
-                processCommand(command);
-                
-                // Новая строка для ввода
-                const newInputLine = document.createElement('div');
-                newInputLine.className = 'terminal-line';
-                newInputLine.innerHTML = '$ <input type="text" class="terminal-input" autofocus><span class="cursor">|</span>';
-                terminal.appendChild(newInputLine);
-                
-                const newInput = document.querySelector('.terminal-input');
-                newInput.focus();
-                terminal.scrollTop = terminal.scrollHeight;
+            // В конце анимации убираем курсор
+            if (currentCursor) {
+                currentCursor.style.display = 'none';
             }
-        });
-    }
-
-    function processCommand(command) {
-        const output = document.createElement('div');
-        
-        switch(command.toLowerCase()) {
-            case 'help':
-                output.innerHTML = `
-                    <span class="success">Доступные команды:</span><br>
-                    <span class="info">help</span> - показать это сообщение<br>
-                    <span class="info">clear</span> - очистить терминал<br>
-                    <span class="info">projects</span> - показать мои проекты<br>
-                    <span class="info">about</span> - информация обо мне<br>
-                    <span class="info">contact</span> - контактная информация<br>
-                `;
-                break;
-            case 'clear':
-                terminal.innerHTML = '';
-                return;
-            case 'projects':
-                output.innerHTML = `
-                    <span class="success">Мои проекты:</span><br>
-                    <span class="info">1. KrythNoteBot</span> - Telegram бот с веб-приложением для заметок<br>
-                    <span class="var">Стек:</span> Python, Flask, Nginx, Supervisor, Gunicorn, PostgreSQL<br>
-                    <span class="link" onclick="window.open('https://t.me/krythnotebot', '_blank')">https://t.me/krythnotebot</span><br><br>
-                    
-                    <span class="info">2. RedRockRobot</span> - Telegram бот с мультиплеерной игрой в крестики-нолики<br>
-                    <span class="var">Стек:</span> Python, Flask, Nginx, Supervisor, Gunicorn, PostgreSQL<br>
-                    <span class="link" onclick="window.open('https://t.me/redrockrobot', '_blank')">https://t.me/redrockrobot</span>
-                `;
-                break;
-            case 'about':
-                output.innerHTML = `
-                    <span class="success">Обо мне:</span><br>
-                    <span class="info">Имя:</span> Кирилл<br>
-                    <span class="info">Возраст:</span> 22 года<br>
-                    <span class="info">Опыт:</span> Более 3 лет коммерческой разработки<br>
-                    <span class="info">Специализация:</span> Разработка Telegram ботов под ключ<br>
-                    <span class="info">Навыки:</span> Разработка, деплой, обновление и поддержка чат-ботов
-                `;
-                break;
-            case 'contact':
-                output.innerHTML = `
-                    <span class="success">Контактная информация:</span><br>
-                    <span class="info">Telegram:</span> @your_telegram (замените на реальный)<br>
-                    <span class="info">Email:</span> your.email@example.com (замените на реальный)
-                `;
-                break;
-            default:
-                output.innerHTML = `<span class="error">Команда "${command}" не найдена. Введите "help" для списка команд.</span>`;
         }
-        
-        terminal.appendChild(output);
-        terminal.scrollTop = terminal.scrollHeight;
     }
 
     // Начинаем анимацию печати
