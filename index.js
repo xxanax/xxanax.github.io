@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const commands = [
         { text: 'cat resume.txt', delay: 100, class: 'command' },
         { text: 'Привет, меня зовут Кирилл!', delay: 50, class: 'info' },
-        { text: 'Возраст: 22 года', delay: 50, class: 'info' },
+        { text: 'Возраст: 23 года', delay: 50, class: 'info' },
         { text: 'Образование: бакалавриат, математик', delay: 50, class: 'info' },
-        { text: 'Опыт коммерческой разработки: более 3 лет', delay: 50, class: 'info' },
+        { text: 'Опыт коммерческой разработки: более 5 лет', delay: 50, class: 'info' },
         { text: 'Начинал с фриланса, затем работал на ИП в роли Fullstack разработчика и DevOps инженера одновременно', delay: 50, class: 'info' },
         { text: 'Специализация: разработка Telegram ботов под ключ', delay: 50, class: 'info' },
         { text: 'Выполнял задачи по разработке, деплою, обновлению и поддержке клиентских чат-ботов и веб-приложений', delay: 50, class: 'info' },
