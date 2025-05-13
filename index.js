@@ -12,34 +12,32 @@ document.addEventListener('DOMContentLoaded', () => {
         { text: 'Начинал с фриланса, затем работал на ИП в роли Fullstack разработчика и DevOps инженера одновременно', delay: 50, class: 'info' },
         { text: 'Специализация: разработка Telegram ботов под ключ', delay: 50, class: 'info' },
         { text: 'Выполнял задачи по разработке, деплою, обновлению и поддержке клиентских чат-ботов и веб-приложений', delay: 50, class: 'info' },
-        { text:'', delay:50},
-        { text: 'Навыки:', delay:50, class: 'command'},
-        { text: '- Python3, Flask, Django, FastAPI', delay:50, class:'comment'},
-        { text: '- Telegram Bot Api, Telegram Web Apps', delay:50, class:'comment'},
-        { text: '- REST, NGINX, Gunicorn, Supervisor', delay:50, class:'comment'},
-        { text: '- HTML5, CSS3, JavaScript, Websocket', delay:50, class:'comment'},
-        { text: '- Docker, GIT, Ubuntu Server', delay:50, class:'comment'},
-        { text: '- PostgreSQL, SQLite', delay:50, class:'comment'},
+        { text: '', delay: 50 },
+        { text: 'Навыки:', delay: 50, class: 'command' },
+        { text: '- Python3, Flask, Django, FastAPI', delay: 50, class: 'comment' },
+        { text: '- Telegram Bot Api, Telegram Web Apps', delay: 50, class: 'comment' },
+        { text: '- REST, NGINX, Gunicorn, Supervisor', delay: 50, class: 'comment' },
+        { text: '- HTML5, CSS3, JavaScript, Websocket', delay: 50, class: 'comment' },
+        { text: '- Docker, GIT, Ubuntu Server', delay: 50, class: 'comment' },
+        { text: '- PostgreSQL, SQLite', delay: 50, class: 'comment' },
         { text: ' ', delay: 50 },
         { text: 'Мои пет-проекты:', delay: 50, class: 'success' },
         { text: '1. KrythNoteBot - Telegram бот с веб-приложением для заметок', delay: 50, class: 'info' },
         { text: 'Стек: Python, Flask, socketio, Nginx, Supervisor, Gunicorn, PostgreSQL', delay: 50, class: 'var' },
-        { text: 'Ссылка: https://t.me/krythnotebot', delay: 50, class: 'link'},
+        { text: 'Ссылка: https://t.me/krythnotebot', delay: 50, class: 'link', href: 'https://t.me/krythnotebot' },
         { text: ' ', delay: 50 },
-        
         { text: '2. RedRockRobot - Telegram бот с мультиплеерной игрой в крестики-нолики', delay: 50, class: 'info' },
         { text: 'Стек: Python, Flask, socketio, Nginx, Supervisor, Gunicorn, PostgreSQL', delay: 50, class: 'var' },
-        { text: 'Ссылка: https://t.me/redrockrobot', delay: 50, class: 'link'},
-        
+        { text: 'Ссылка: https://t.me/redrockrobot', delay: 50, class: 'link', href: 'https://t.me/redrockrobot' },
+        { text: ' ', delay: 50 },
         { text: '3. KrythToDoBot - Telegram бот с минималистичным таск трекером в стиле терминала внутри', delay: 50, class: 'info' },
         { text: 'Стек: Python, Flask, socketio, Nginx, Supervisor, Gunicorn, PostgreSQL', delay: 50, class: 'var' },
-        { text: 'Ссылка: https://t.me/redrockrobot', delay: 50, class: 'link'},
-        
+        { text: 'Ссылка: https://t.me/redrockrobot', delay: 50, class: 'link', href: 'https://t.me/redrockrobot' },
         { text: ' ', delay: 50 },
         { text: 'Связь со мной:', delay: 50, class: 'success' },
         { text: 'Telegram: @hqwskq', delay: 50, class: 'info' },
         { text: 'Email: kolosoek86@gmail.com', delay: 50, class: 'info' },
-        { text: 'GitHub: https://github.com/xxanax', delay: 50, class: 'info' },
+        { text: 'GitHub: https://github.com/xxanax', delay: 50, class: 'link', href: 'https://github.com/xxanax' },
         { text: ' ', delay: 50 },
         { text: 'Спасибо за просмотр моего резюме!', delay: 50, class: 'success' }
     ];
@@ -59,13 +57,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     span.className = command.class;
                 }
                 
-                span.textContent = char;
-                currentTypedText.appendChild(span);
+                // Если строка имеет класс 'link' и href, создаем элемент <a>
+                if (command.class === 'link' && command.href) {
+                    if (currentChar === 0) {
+                        const link = document.createElement('a');
+                        link.href = command.href;
+                        link.className = 'link';
+                        link.target = '_blank'; // Открывать ссылку в новой вкладке
+                        currentTypedText.appendChild(link);
+                        currentTypedText = link; // Временная замена для добавления текста в <a>
+                    }
+                    currentTypedText.appendChild(document.createTextNode(char));
+                } else {
+                    span.textContent = char;
+                    currentTypedText.appendChild(span);
+                }
                 
                 terminal.scrollTop = terminal.scrollHeight;
                 currentChar++;
                 setTimeout(typeWriter, command.delay);
             } else {
+                // Восстанавливаем currentTypedText, если использовался <a>
+                if (command.class === 'link' && command.href) {
+                    currentTypedText = currentTypedText.parentElement; // Возвращаем к исходному .typed-text
+                }
+                
                 // Убираем курсор с завершенной строки
                 if (currentCursor) {
                     currentCursor.style.display = 'none';
