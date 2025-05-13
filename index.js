@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { text: ' ', delay: 50 },
         { text: '3. KrythToDoBot - Telegram бот с минималистичным таск трекером в стиле терминала внутри', delay: 50, class: 'info' },
         { text: 'Стек: Python, Flask, socketio, Nginx, Supervisor, Gunicorn, PostgreSQL', delay: 50, class: 'var' },
-        { text: 'Ссылка: https://t.me/redrockrobot', delay: 50, class: 'link', href: 'https://t.me/redrockrobot' },
+        { text: 'Ссылка: https://t.me/todokrythbot', delay: 50, class: 'link', href: 'https://t.me/todokrythbot' },
         { text: ' ', delay: 50 },
         { text: 'Связь со мной:', delay: 50, class: 'success' },
         { text: 'Telegram: @hqwskq', delay: 50, class: 'info' },
