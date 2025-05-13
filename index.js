@@ -26,9 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
         { text: 'Стек: Python, Flask, socketio, Nginx, Supervisor, Gunicorn, PostgreSQL', delay: 50, class: 'var' },
         { text: 'Ссылка: https://t.me/krythnotebot', delay: 50, class: 'link'},
         { text: ' ', delay: 50 },
+        
         { text: '2. RedRockRobot - Telegram бот с мультиплеерной игрой в крестики-нолики', delay: 50, class: 'info' },
         { text: 'Стек: Python, Flask, socketio, Nginx, Supervisor, Gunicorn, PostgreSQL', delay: 50, class: 'var' },
         { text: 'Ссылка: https://t.me/redrockrobot', delay: 50, class: 'link'},
+        
+        { text: '3. KrythToDoBot - Telegram бот с минималистичным таск трекером в стиле терминала внутри', delay: 50, class: 'info' },
+        { text: 'Стек: Python, Flask, socketio, Nginx, Supervisor, Gunicorn, PostgreSQL', delay: 50, class: 'var' },
+        { text: 'Ссылка: https://t.me/redrockrobot', delay: 50, class: 'link'},
+        
         { text: ' ', delay: 50 },
         { text: 'Связь со мной:', delay: 50, class: 'success' },
         { text: 'Telegram: @hqwskq', delay: 50, class: 'info' },
